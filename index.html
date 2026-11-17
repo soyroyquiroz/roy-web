@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roy Quiroz · Páginas web para tu negocio</title>
-<meta name="description" content="Páginas web rápidas, bonitas y a precio justo para negocios en México. Lista en 7 días.">
+<meta name="description" content="Páginas web rápidas, bonitas y a precio justo para negocios en México y Latinoamérica. Precios en tu moneda. Lista en 7 días.">
 <style>
   :root{
     --bg:#0d0d0f; --card:#16161a; --line:#2a2a31; --text:#f2f2f2; --muted:#a3a3ad;
@@ -36,6 +36,9 @@
   .card h3{font-size:20px;margin-bottom:6px}
   .price{font-size:34px;font-weight:800;margin:10px 0 2px}
   .price small{font-size:15px;color:var(--muted);font-weight:500}
+  .cur{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:-14px 0 28px;color:var(--muted);font-size:15px}
+  .cur select{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;min-height:44px}
+  .approx{font-size:13px;color:var(--muted);margin-bottom:4px;min-height:18px}
   .card ul{list-style:none;margin:16px 0 22px;flex:1}
   .card li{padding:6px 0 6px 24px;position:relative;color:#d8d8de;font-size:15px}
   .card li:before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:700}
@@ -78,12 +81,28 @@
 
 <section id="precios">
   <div class="wrap">
-    <h2>Precios claros, en pesos</h2>
-    <p class="sub">El dominio (.com o .mx) lo pagas tú directo, aprox. $250–$400 al año. El hosting va incluido sin costo.</p>
+    <h2>Precios claros, en tu moneda</h2>
+    <p class="sub">El dominio (.com o .mx) lo pagas tú directo, aprox. <span data-range="15,22"></span> al año. El hosting va incluido sin costo.</p>
+    <label class="cur">Ver precios en
+      <select id="moneda" aria-label="Moneda">
+        <option value="USD">🇺🇸 Dólares (USD)</option>
+        <option value="MXN">🇲🇽 Pesos mexicanos (MXN)</option>
+        <option value="CAD">🇨🇦 Dólares canadienses (CAD)</option>
+        <option value="EUR">🇪🇺 Euros (EUR)</option>
+        <option value="GTQ">🇬🇹 Quetzales (GTQ)</option>
+        <option value="HNL">🇭🇳 Lempiras (HNL)</option>
+        <option value="DOP">🇩🇴 Pesos dominicanos (DOP)</option>
+        <option value="COP">🇨🇴 Pesos colombianos (COP)</option>
+        <option value="PEN">🇵🇪 Soles (PEN)</option>
+        <option value="CLP">🇨🇱 Pesos chilenos (CLP)</option>
+        <option value="ARS">🇦🇷 Pesos argentinos (ARS)</option>
+      </select>
+    </label>
     <div class="grid">
       <div class="card">
         <h3>Esencial</h3>
-        <div class="price">$2,900 <small>MXN</small></div>
+        <div class="price" data-plan="Esencial"></div>
+        <div class="approx"></div>
         <ul>
           <li>Página de una sección (landing)</li>
           <li>Botón directo a tu WhatsApp</li>
@@ -91,11 +110,12 @@
           <li>Se ve perfecto en celular</li>
           <li>Lista en 5 días</li>
         </ul>
-        <a class="btn ghost wa-link" data-msg="Hola Roy, me interesa el paquete Esencial ($2,900)">Lo quiero</a>
+        <a class="btn ghost wa-link" data-msg="Hola Roy, me interesa el paquete Esencial" data-plan-msg="Esencial">Lo quiero</a>
       </div>
       <div class="card pop">
         <h3>Restaurante / Menú</h3>
-        <div class="price">$4,500 <small>MXN</small></div>
+        <div class="price" data-plan="Restaurante"></div>
+        <div class="approx"></div>
         <ul>
           <li>Todo lo de Esencial</li>
           <li>Menú digital con fotos y precios</li>
@@ -103,11 +123,12 @@
           <li>Pedidos por WhatsApp</li>
           <li>Alta en Google Maps</li>
         </ul>
-        <a class="btn wa-link" data-msg="Hola Roy, me interesa el paquete Restaurante ($4,500)">Lo quiero</a>
+        <a class="btn wa-link" data-msg="Hola Roy, me interesa el paquete Restaurante" data-plan-msg="Restaurante">Lo quiero</a>
       </div>
       <div class="card">
         <h3>Negocio completo</h3>
-        <div class="price">$6,900 <small>MXN</small></div>
+        <div class="price" data-plan="Negocio completo"></div>
+        <div class="approx"></div>
         <ul>
           <li>Hasta 5 secciones</li>
           <li>Galería, servicios y testimonios</li>
@@ -115,10 +136,10 @@
           <li>SEO básico para Google</li>
           <li>Lista en 7–10 días</li>
         </ul>
-        <a class="btn ghost wa-link" data-msg="Hola Roy, me interesa el paquete Negocio completo ($6,900)">Lo quiero</a>
+        <a class="btn ghost wa-link" data-msg="Hola Roy, me interesa el paquete Negocio completo" data-plan-msg="Negocio completo">Lo quiero</a>
       </div>
     </div>
-    <p class="sub" style="margin-top:22px">Mantenimiento opcional: <b>$399/mes</b> — cambios de precios, fotos, menú y promos cuando los necesites.</p>
+    <p class="sub" style="margin-top:22px">Mantenimiento opcional: <b><span data-plan="Mantenimiento"></span>/mes</b> — cambios de precios, fotos, menú y promos cuando los necesites.</p>
   </div>
 </section>
 
@@ -156,10 +177,78 @@
 <a class="wa wa-link" data-msg="Hola Roy, quiero info de páginas web">WhatsApp</a>
 
 <script>
-  document.querySelectorAll('.wa-link').forEach(a=>{
-    a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(a.dataset.msg || "Hola Roy");
-    a.target = "_blank"; a.rel = "noopener";
-  });
+  // ====== PRECIOS ======
+  // Base en dólares. Si quieres un precio fijo (redondo) en otra moneda, agrégalo en FIJOS;
+  // las demás monedas se convierten con el tipo de cambio del día y se muestran como "aprox.".
+  const PRECIOS_USD = { "Esencial":159, "Restaurante":249, "Negocio completo":379, "Mantenimiento":22 };
+  const FIJOS = { MXN: { "Esencial":2900, "Restaurante":4500, "Negocio completo":6900, "Mantenimiento":399 } };
+  // Respaldo si no hay internet para el tipo de cambio (1 USD = ...)
+  let TASAS = { USD:1, MXN:18.5, CAD:1.4, EUR:0.92, GTQ:7.7, HNL:25.5, DOP:62, COP:4000, PEN:3.7, CLP:950, ARS:1400 };
+
+  const sel = document.getElementById('moneda');
+  const disponibles = [...sel.options].map(o=>o.value);
+
+  function monedaInicial(){
+    try { const g = localStorage.getItem('moneda'); if (g && disponibles.includes(g)) return g; } catch(e){}
+    const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+    const lang = (navigator.language || "").toUpperCase();
+    const porPais = { MX:"MXN", US:"USD", CA:"CAD", GT:"GTQ", HN:"HNL", DO:"DOP", CO:"COP", PE:"PEN", CL:"CLP", AR:"ARS", ES:"EUR" };
+    const pais = lang.split("-")[1];
+    if (pais && porPais[pais]) return porPais[pais];
+    if (/Mexico|Cancun|Merida|Monterrey|Tijuana|Chihuahua|Hermosillo|Mazatlan|Matamoros|Bahia_Banderas/.test(tz)) return "MXN";
+    return "USD";
+  }
+
+  function redondo(n){
+    if (n < 100) return Math.round(n);
+    const p = Math.pow(10, Math.floor(Math.log10(n)) - 2); // 3 cifras significativas
+    return Math.round(n / p) * p;
+  }
+
+  function precio(plan, cur){
+    if (FIJOS[cur] && FIJOS[cur][plan] != null) return { v: FIJOS[cur][plan], aprox:false };
+    if (cur === "USD") return { v: PRECIOS_USD[plan], aprox:false };
+    return { v: redondo(PRECIOS_USD[plan] * TASAS[cur]), aprox:true };
+  }
+
+  function fmt(v, cur){
+    const n = new Intl.NumberFormat("es-MX", { maximumFractionDigits:0 }).format(v);
+    return "$" + n + " " + cur;
+  }
+
+  function pintar(){
+    const cur = sel.value;
+    document.querySelectorAll('[data-plan]').forEach(el=>{
+      const p = precio(el.dataset.plan, cur);
+      const txt = (p.aprox ? "≈ " : "") + fmt(p.v, cur);
+      if (el.classList.contains('price')) {
+        el.innerHTML = (p.aprox ? "≈ " : "") + "$" + new Intl.NumberFormat("es-MX",{maximumFractionDigits:0}).format(p.v) + " <small>" + cur + "</small>";
+        const ap = el.nextElementSibling;
+        if (ap && ap.classList.contains('approx'))
+          ap.textContent = p.aprox ? "Se cobra " + fmt(PRECIOS_USD[el.dataset.plan], "USD") : "";
+      } else el.textContent = txt;
+    });
+    document.querySelectorAll('[data-range]').forEach(el=>{
+      const [a,b] = el.dataset.range.split(',').map(Number);
+      const t = TASAS[cur];
+      el.textContent = cur === "MXN" ? "$250–$400 MXN" : "$" + redondo(a*t).toLocaleString("es-MX") + "–$" + redondo(b*t).toLocaleString("es-MX") + " " + cur;
+    });
+    document.querySelectorAll('.wa-link').forEach(a=>{
+      let msg = a.dataset.msg || "Hola Roy";
+      if (a.dataset.planMsg) msg += " (" + fmt(precio(a.dataset.planMsg, cur).v, cur) + ")";
+      a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+      a.target = "_blank"; a.rel = "noopener";
+    });
+  }
+
+  sel.value = monedaInicial();
+  sel.addEventListener('change', ()=>{ try { localStorage.setItem('moneda', sel.value); } catch(e){} pintar(); });
+  pintar();
+
+  // Tipo de cambio del día (gratis, sin clave). Si falla, se quedan las tasas de respaldo.
+  fetch("https://open.er-api.com/v6/latest/USD").then(r=>r.json()).then(d=>{
+    if (d && d.rates) { disponibles.forEach(c=>{ if (d.rates[c]) TASAS[c] = d.rates[c]; }); pintar(); }
+  }).catch(()=>{});
 </script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuéntame de tu negocio · Roy Quiroz</title>
+<meta name="description" content="Cuestionario de inicio: cuéntame de tu negocio y armamos tu proyecto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F5F1EA;--card:#FBF9F5;--line:#DDD5C8;--text:#151413;--muted:#6F6A63;--red:#A8262F;--blue:#151413;--serif:"Instrument Serif",Georgia,serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:34px 22px 90px}
+  a{color:var(--text)}
+  .logo{font-family:var(--serif);font-size:26px;margin-bottom:56px;display:inline-block;text-decoration:none;color:var(--text)}
+  .logo span{color:var(--red)}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,8vw,64px);line-height:1;letter-spacing:-.015em;margin-bottom:16px}
+  .lead{color:var(--muted);margin-bottom:40px;font-size:17px}
+  fieldset{border:0;border-top:1px solid var(--text);padding:28px 0 8px;margin-bottom:28px}
+  legend{font-family:var(--serif);font-size:28px;padding:0 0 4px}
+  .hint{color:var(--muted);font-size:14px;margin:-2px 0 14px}
+  label{display:block;font-size:14px;margin:18px 0 7px;font-weight:500}
+  label small{color:var(--muted);font-weight:400}
+  input[type=text],input[type=tel],input[type=email],textarea,select{width:100%;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:13px 14px;font:inherit}
+  textarea{min-height:90px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--text);outline-offset:1px;border-color:transparent}
+  .checks label{display:flex;gap:12px;align-items:center;font-weight:400;font-size:16px;margin:0;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
+  .checks input{accent-color:var(--text);width:18px;height:18px;flex:none}
+  .hidden{display:none}
+  .btn{display:block;width:100%;background:var(--text);color:var(--bg);border:0;font-weight:500;font-size:16px;padding:18px;border-radius:999px;cursor:pointer;margin-top:12px}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--text)}
+  .note{color:var(--muted);font-size:13px;margin-top:16px;text-align:center}
+  .req{color:var(--red)}
+  #err{color:var(--red);font-weight:600;margin-top:10px;display:none}
+</style>
+</head>
+<body>
+<script>const WA_NUMBER = "15186696599";</script>
+<div class="wrap">
+  <a class="logo" href="/">Roy Quiroz<span>.</span></a>
+  <h1>Cuéntame de tu negocio</h1>
+  <p class="lead">Te toma unos 5–8 minutos. Con esto te armo una propuesta a la medida. Al final se abre WhatsApp con todo listo para mandármelo. Lo que no sepas, déjalo en blanco.</p>
+
+  <form id="f" novalidate>
+    <fieldset>
+      <legend>1. Tu negocio</legend>
+      <label>Nombre del negocio <span class="req">*</span></label>
+      <input type="text" name="Negocio" required>
+      <label>¿A qué se dedica? <span class="req">*</span> <small>(ej. taquería, barbería, consultorio dental)</small></label>
+      <input type="text" name="Giro" required>
+      <label>Ciudad y dirección</label>
+      <input type="text" name="Dirección">
+      <label>Horario</label>
+      <input type="text" name="Horario" placeholder="ej. Lun–Sáb 9:00–20:00">
+      <label>Tu nombre <span class="req">*</span></label>
+      <input type="text" name="Contacto" required>
+      <label>WhatsApp del negocio</label>
+      <input type="tel" name="WhatsApp">
+      <label>Redes sociales <small>(links o @usuario)</small></label>
+      <input type="text" name="Redes">
+      <label>Correo de Gmail del negocio <small>(ahí quedan tus hojas y formularios; nunca te pido contraseñas)</small></label>
+      <input type="email" name="Gmail">
+    </fieldset>
+
+    <fieldset>
+      <legend>2. ¿Qué te interesa?</legend>
+      <p class="hint">Marca todo lo que te llame la atención. Si no sabes, marca la última opción.</p>
+      <div class="checks" id="svc">
+        <label><input type="checkbox" value="pagina"> Página web</label>
+        <label><input type="checkbox" value="whatsapp"> WhatsApp en automático</label>
+        <label><input type="checkbox" value="maps"> Aparecer en Google Maps</label>
+        <label><input type="checkbox" value="pedidos"> Pedidos o citas ordenados</label>
+        <label><input type="checkbox" value="inventario"> Inventario que me dice qué comprar</label>
+        <label><input type="checkbox" value="seguimiento"> Seguimiento de clientes y cotizaciones</label>
+        <label><input type="checkbox" value="combo"> Combo Negocio en automático</label>
+        <label><input type="checkbox" value="nose"> No sé, quiero un diagnóstico gratis</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Cómo trabajas hoy</legend>
+      <label>¿Cómo te llegan los clientes? <small>(WhatsApp, Facebook, pasan por el local, recomendación…)</small></label>
+      <textarea name="Cómo llegan clientes"></textarea>
+      <label>¿Qué preguntas te hacen más seguido?</label>
+      <textarea name="Preguntas frecuentes" placeholder="ej. precios, si hay servicio a domicilio, horario…"></textarea>
+      <label>¿Dónde anotas pedidos, citas o pendientes?</label>
+      <input type="text" name="Dónde anota" placeholder="ej. libreta, chats de WhatsApp, de memoria">
+      <label>¿Qué se te ha olvidado o perdido en el último mes por estar ocupado?</label>
+      <textarea name="Lo que se pierde"></textarea>
+      <label>Si mañana una sola cosa pasara sola, ¿cuál sería?</label>
+      <textarea name="Lo que más quiere automatizar"></textarea>
+    </fieldset>
+
+    <fieldset class="hidden" data-for="pagina combo">
+      <legend>4. Para tu página</legend>
+      <label>¿Qué quieres que haga la gente al entrar?</label>
+      <input type="text" name="Objetivo de la página" placeholder="ej. escribirme, ver el menú, agendar">
+      <label>Productos, servicios o menú con precios <small>(puedes pegarlo o mandar foto después)</small></label>
+      <textarea name="Menú / servicios"></textarea>
+      <label>Colores o páginas que te gusten</label>
+      <input type="text" name="Estilo">
+      <label>¿Tienes logo y fotos?</label>
+      <select name="Logo y fotos"><option value="">Elige…</option><option>Sí, tengo logo y fotos</option><option>Solo logo</option><option>Solo fotos</option><option>No tengo</option></select>
+      <label>¿Ya tienes dominio? <small>(ej. tunegocio.com)</small></label>
+      <input type="text" name="Dominio" placeholder="Si no, ¿cuál te gustaría?">
+    </fieldset>
+
+    <fieldset class="hidden" data-for="whatsapp combo">
+      <legend>5. Para tu WhatsApp</legend>
+      <label>¿Ya usas WhatsApp Business?</label>
+      <select name="WhatsApp Business"><option value="">Elige…</option><option>Sí</option><option>No, uso WhatsApp normal</option></select>
+      <label>¿Cuántos productos quieres en tu catálogo? <small>(hasta 10 incluidos)</small></label>
+      <input type="text" name="Productos para catálogo">
+      <label>¿Cómo te pagan tus clientes?</label>
+      <input type="text" name="Formas de pago" placeholder="ej. efectivo, transferencia, tarjeta">
+    </fieldset>
+
+    <fieldset class="hidden" data-for="pedidos">
+      <legend>6. Pedidos o citas</legend>
+      <label>¿Qué recibes más?</label>
+      <select name="Pedidos o citas"><option value="">Elige…</option><option>Pedidos</option><option>Citas</option><option>Los dos</option></select>
+      <label>¿Qué datos le pides hoy al cliente?</label>
+      <textarea name="Datos que pide" placeholder="ej. nombre, dirección, qué quiere, hora"></textarea>
+      <label>¿Cuántos pedidos o citas tienes por semana, más o menos?</label>
+      <input type="text" name="Volumen semanal">
+    </fieldset>
+
+    <fieldset class="hidden" data-for="inventario">
+      <legend>7. Inventario</legend>
+      <label>¿Más o menos cuántos productos o insumos manejas?</label>
+      <input type="text" name="Número de productos">
+      <label>¿Los compras por caja, por pieza o por kilo?</label>
+      <input type="text" name="Cómo compra">
+      <label>¿Cada cuánto compras y a quién?</label>
+      <input type="text" name="Frecuencia y proveedores">
+      <label>¿Qué se te acaba más seguido?</label>
+      <textarea name="Lo que se acaba"></textarea>
+    </fieldset>
+
+    <fieldset class="hidden" data-for="seguimiento">
+      <legend>8. Seguimiento de clientes</legend>
+      <label>¿Cuántas cotizaciones o clientes nuevos tienes al mes?</label>
+      <input type="text" name="Cotizaciones al mes">
+      <label>¿Dónde las anotas hoy y cómo les das seguimiento?</label>
+      <textarea name="Seguimiento actual"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Último</legend>
+      <label>¿Para cuándo lo necesitas?</label>
+      <select name="Urgencia"><option value="">Elige…</option><option>Lo antes posible</option><option>Este mes</option><option>Sin prisa</option></select>
+      <label>¿Algo más que deba saber?</label>
+      <textarea name="Comentarios"></textarea>
+    </fieldset>
+
+    <p id="err">Faltan los campos con * (nombre del negocio, a qué se dedica y tu nombre).</p>
+    <button class="btn" type="submit">Enviar por WhatsApp →</button>
+    <button class="btn ghost" type="button" id="copy">Copiar mis respuestas</button>
+    <p class="note">Después mándame tu logo y fotos por el mismo chat. Tus datos solo se usan para tu proyecto.</p>
+  </form>
+</div>
+
+<script>
+  const svc = document.getElementById('svc');
+  function sync(){
+    const on = [...svc.querySelectorAll('input:checked')].map(i=>i.value);
+    document.querySelectorAll('fieldset[data-for]').forEach(fs=>{
+      const show = fs.dataset.for.split(' ').some(v=>on.includes(v));
+      fs.classList.toggle('hidden', !show);
+    });
+  }
+  svc.addEventListener('change', sync);
+
+  function build(){
+    const f = document.getElementById('f');
+    const lines = ['*Nuevo proyecto · Roy Web*',''];
+    const labels = {pagina:'Página web',whatsapp:'WhatsApp en automático',maps:'Google Maps',pedidos:'Pedidos/citas',inventario:'Inventario',seguimiento:'Seguimiento de clientes',combo:'Combo Negocio en automático',nose:'Diagnóstico gratis'};
+    const on = [...svc.querySelectorAll('input:checked')].map(i=>labels[i.value]);
+    if(on.length) lines.push('*Le interesa:* '+on.join(', '));
+    f.querySelectorAll('fieldset').forEach(fs=>{
+      if(fs.classList.contains('hidden')) return;
+      fs.querySelectorAll('input[name],textarea[name],select[name]').forEach(el=>{
+        const v = (el.value||'').trim();
+        if(v) lines.push('*'+el.name+':* '+v);
+      });
+    });
+    return lines.join('\n');
+  }
+  function valid(){
+    const ok = ['Negocio','Giro','Contacto'].every(n=>document.querySelector('[name="'+n+'"]').value.trim());
+    document.getElementById('err').style.display = ok ? 'none':'block';
+    return ok;
+  }
+  document.getElementById('f').addEventListener('submit', e=>{
+    e.preventDefault();
+    if(!valid()) return;
+    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(build()), '_blank', 'noopener');
+  });
+  document.getElementById('copy').addEventListener('click', async ()=>{
+    if(!valid()) return;
+    try{ await navigator.clipboard.writeText(build()); document.getElementById('copy').textContent='¡Copiado! Pégalo en WhatsApp'; }
+    catch(_){ alert('No se pudo copiar automáticamente. Usa el botón verde.'); }
+  });
+</script>
+</body>
+</html>
